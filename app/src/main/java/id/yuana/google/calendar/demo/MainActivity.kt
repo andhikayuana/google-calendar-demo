@@ -12,6 +12,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.TextUtils
 import android.util.Log
+import android.widget.Toast
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.api.client.extensions.android.http.AndroidHttp
@@ -261,6 +262,7 @@ class MainActivity : AppCompatActivity() {
         override fun onPostExecute(result: MutableList<String>?) {
             super.onPostExecute(result)
             Log.d("MainActivity", result.toString())
+            Toast.makeText(this@MainActivity, "success", Toast.LENGTH_SHORT).show()
             mProgress!!.hide()
         }
 
