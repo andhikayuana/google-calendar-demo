@@ -255,15 +255,18 @@ class MainActivity : AppCompatActivity() {
 
         override fun onPreExecute() {
             super.onPreExecute()
+            mProgress!!.show()
         }
 
         override fun onPostExecute(result: MutableList<String>?) {
             super.onPostExecute(result)
             Log.d("MainActivity", result.toString())
+            mProgress!!.hide()
         }
 
         override fun onCancelled() {
             super.onCancelled()
+            mProgress!!.hide()
         }
     }
 
